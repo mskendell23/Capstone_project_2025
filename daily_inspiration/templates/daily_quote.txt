@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DAILY INSPIRATION</title>
+</head>
+<body>
+	{% if quote %}
+		<h1>{{ quote.text }}</h1>
+		<p><em>Category: {{ quote.category }}</em></p>
+	{% else %}
+		<p>No quotes available.</p>
+	{% endif %}
+</body>
+</html>
