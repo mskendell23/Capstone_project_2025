@@ -24,7 +24,7 @@ quotes_by_category = {
         {"text": "Faith is to be believe what you don't see; the reward of this faith is to see what you believe.", "author": "Saint Augustine"},
         {"text": "The way to see Faith is to shut the Eye of Reason.", "author": "Benjamin Franklin"},
         {"text": "We are in the world, but not of the world. Always remember not to build your nests too strong here.", "author": "Henry G. Bosch"},
-        {"text": "To look around is to be distressed. To look within is to be depressed. To look upis to be blessed.", "author": "R. Becker"},
+        {"text": "To look around is to be distressed. To look within is to be depressed. To look up is to be blessed.", "author": "R. Becker"},
         {"text": "We are not merely to be enlightened ourselves; but to be as lights enlightening others!", "author": "A.R. Fausset"}
     ],
 

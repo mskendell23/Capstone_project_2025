@@ -1,19 +1,50 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>DAILY INSPIRATION</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-	<h1>Daily Inspiration</h1>
 
-	{% if quote %}
-		<h2>Category: {{ category}}</h2>
-		<blockquote>
-			"{{ quote.text }}"
-		</blockquote>
-		- <em>{{ quote.author }}</em>
-	{% else %}
-		<p>No quotes available in this category.</p>
-	{% endif %}
+	<!-- Basic Header-->
+	<header>
+		<nav>
+			<ul>
+				<li><a href="{% url 'daily_quote' %}">Home</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main Content -->
+	<div class="content">
+		<h1>Daily Inspiration</h1>
+
+		<div id="category"></div>
+		<blockquote id="quote"></blockquote>
+		<p id="author"></p>
+	</div>
+
+	<script>
+		fetch("/quotes/api/daily-quote")
+			.then(response => response.json())
+			.then(data => {
+				if (data.text) {
+				document.getElementById("quote").innerText = data.text;
+				document.getElementById("author").innerText = `-${data.author || "Unknown"}`;
+					if (data.category) {
+						document.getElementById("category").innerText = `Category: ${data.category}`;
+					}
+				} else {
+					document.getElementById("quote").innerText = "No quote available.";
+				}
+			});
+	</script>
+
+	<!-- Footer -->
+	<footer>
+		<p>&copy; 2025 Daily Inspiration App</p>
+	</footer>
+
 </body>
 </html>

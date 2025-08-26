@@ -5,10 +5,11 @@ from rest_framework.decorators import api_view
 from  .models import Quote
 from .serializers import QuoteSerializer
 import random
+import datetime
 
 
-# Daily Quote request
-def daily_quote(request):
+# Daily Quote request (HTML Page)
+def homepage(request):
     categories = ["motivation", "faith", "love"]
     selected_category = random.choice(categories)
 
@@ -17,9 +18,23 @@ def daily_quote(request):
     
     return render(request, "daily_quote.html", {"quote": quote, "category": selected_category})
 
-# New API endpoint
+# API endpoints: 
+# Daily Quote: Returns the same quote for the current day
 @api_view(['GET'])
 def daily_quote(request):
+    quotes = Quote.objects.all()
+    if quotes.exists():
+        # Use today's date to pick the same "daily quote"
+        today = datetime.date.today()
+        index = today.toordinal() % quotes.count()
+        quote = quotes[index]
+        serializer = QuoteSerializer(quote)
+        return Response(serializer.data)
+    return Response({"message": "No quotes available"})
+
+# Random Quote: Returns a completely random quote each time
+@api_view(['GET'])
+def random_quote(request):
     quotes = Quote.objects.all()
     if quotes.exists():
         quote = random.choice(quotes)
