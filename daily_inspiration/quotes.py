@@ -1,7 +1,7 @@
 
 quotes_by_category = {
      # Motivation & Life Wisdom
-    "motivation": [
+    "Motivation": [
          {"text": "Believe you can and you’re halfway there.", "author": "Theodore Roosevelt"},
          {"text": "The best way to predict the future is to create it.", "author": "Peter Drucker"},
          {"text": "The only limit to our realization of tomorrow will be our doubts of today.", "author": "Franklin D. Roosevelt"},
@@ -17,7 +17,7 @@ quotes_by_category = {
     ],
 
     # Faith & Religion
-    "faith": [
+    "Faith": [
         {"text": "Faith is the art of holding on to things in spite of your changing moods and circumstances.", "author": "C.S. Lewis"},
         {"text": "When you have faith, you can do things you never thought possible.", "author": "Unknown"},
         {"text": "Faith is taking the first step even when you don't see the whole staircase.", "author": "Martin Luther King Jr."},
@@ -29,7 +29,7 @@ quotes_by_category = {
     ],
 
     # Love & Relationships
-    "love": [
+    "Love": [
         {"text": "Love is the only force capable of transforming an enemy into a friend.", "author": "Martin Luther King Jr."},
         {"text": "Love is the bridge between you and everything.", "author": "Rumi"},
         {"text": "The greatest happiness of life is the conviction that we are loved; loved for ourselves, or rather, loved in spite of ourselves.", "author": "Victor Hugo"},

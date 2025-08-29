@@ -3,9 +3,9 @@ from django.db import models
 # Create models with fields.
 class Quote(models.Model):
     CATEGORY_CHOICES = [
-        ("motivation", "Motivation and Life Wisdom"),
-        ("love", "Love & Relationships"),
-        ("faith", "Faith & Religion"),
+        ("Motivation", "Motivation and Life Wisdom"),
+        ("Love", "Love & Relationships"),
+        ("Faith", "Faith & Religion"),
     ]
 
     text = models.TextField()

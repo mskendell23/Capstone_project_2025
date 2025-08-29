@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from  .models import Quote
@@ -9,8 +10,9 @@ import datetime
 
 
 # Daily Quote request (HTML Page)
+@login_required
 def homepage(request):
-    categories = ["motivation", "faith", "love"]
+    categories = ["Motivation", "Faith", "Love"]
     selected_category = random.choice(categories)
 
     quotes = Quote.objects.filter(category=selected_category)
